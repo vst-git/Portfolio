@@ -1,23 +1,35 @@
-/* eslint-disable no-unused-vars */
-import { useRef } from 'react'
-import LogoS from '../../../assets/images/PHOTO.jpg'
-import './index.scss'
+.logo-container {
+  z-index: 0;
+  width: 400px;
+  height: 600px;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: 5%;
+  bottom: 0;
+  left: auto;
+  margin: 80px;
+  animation: zoomInDown 2.5s ease-in-out 1s;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-const Logo = () => {
-  const bgRef = useRef()
-  const outlineLogoRef = useRef()
-  const solidLogoRef = useRef()
 
-  return (
-    <div className="logo-container">
-  <img
-    className="solid-logo"
-    ref={solidLogoRef}
-    src={LogoS}
-    alt="JavaScript Developer"
-  />
-</div>
-  )
+.solid-logo {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+  width: 80%; /* Adjust the width as needed (e.g., 80% of the container) */
+  height: auto; /* Maintain aspect ratio based on the width */
+  opacity: 1;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid green; /* Thin green border around the image */
+  padding: 10px; /* Padding around the image */
 }
-
-export default Logo
+}
