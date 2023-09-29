@@ -1,39 +1,23 @@
-.logo-container {
-  z-index: 0;
-  width: 400px;
-  height: 609px;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  right: 15%;
-  bottom: 0;
-  left: auto;
-  margin: auto;
-  animation: zoomInDown 2.5s ease-in-out 1s;
-  user-select: none;
+/* eslint-disable no-unused-vars */
+import { useRef } from 'react'
+import LogoS from '../../../assets/images/PHOTO.jpg'
+import './index.scss'
 
-  svg {
-    width: 100%;
-    height: auto;
-    bottom: 0;
-    transform: rotateZ(30deg) !important;
-  }
+const Logo = () => {
+  const bgRef = useRef()
+  const outlineLogoRef = useRef()
+  const solidLogoRef = useRef()
 
-  .solid-logo {
-    position: absolute;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: 0;
-    margin: auto;
-    width: 100%;
-    opacity: 1;
-    transform: rotateZ(30deg) !important;
-    z-index: 1;
-  }
+  return (
+    <div className="logo-container">
+  <img
+    className="solid-logo"
+    ref={solidLogoRef}
+    src={LogoS}
+    alt="JavaScript Developer"
+  />
+</div>
+  )
 }
 
-.svg-container {
-  stroke: #ffd700;
-  stroke-width: 10;
-}
+export default Logo
